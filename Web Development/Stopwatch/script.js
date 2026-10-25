@@ -6,6 +6,8 @@ var hr=00;
 var min=00;
 var sec=00;
 var ms=00;
+var runid=null;
+var isrun=false;
 reset.onclick=function(){
     time.textContent="00:00:00:00";
     hr=00;
@@ -16,13 +18,14 @@ reset.onclick=function(){
     start.textContent="Start";
     start.style.display="inline-block";
     stop.style.display="none";
+    clearInterval(runid);
 }
-var isrun=false;
 stop.onclick=function(){
     isrun=false;
     start.textContent="Resume";
     start.style.display="inline-block";
     stop.style.display="none";
+    clearInterval(runid);
 }
 
 function count(){
